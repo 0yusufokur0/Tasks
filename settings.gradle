@@ -1,0 +1,2 @@
+rootProject.name = "Hizmet Takip"
+include ':app'
