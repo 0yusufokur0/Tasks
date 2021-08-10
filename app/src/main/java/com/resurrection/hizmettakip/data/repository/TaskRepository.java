@@ -57,6 +57,29 @@ public class TaskRepository {
         return oneStaffData;
     }
 
+    public void test(StaffEntity staffEntity){
+        class testClass extends AsyncTask<StaffEntity,Void,Void>{
+            TaskDao taskDao;
+
+            public testClass(TaskDao taskDao) {
+                this.taskDao = taskDao;
+            }
+
+            @Override
+            protected Void doInBackground(StaffEntity... staffEntities) {
+                staffEntities[0] = staffEntity;
+                taskDao.InsertStaff(staffEntities[0]);
+
+                return null;
+            }
+        }
+    }
+
+
+
+
+
+
 
 
     // Crud Staff Async Class
@@ -74,6 +97,16 @@ public class TaskRepository {
             return null;
         }
     }
+
+
+
+
+
+
+
+
+
+
     private class UpdateStaffAsyncTask extends AsyncTask<StaffEntity, Void, Void> {
         TaskDao taskDao;
 
